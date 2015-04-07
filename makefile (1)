@@ -1,0 +1,20 @@
+# Programmer: Georgina Hutchins						Course: CSC112 A
+# Assignment: 9								Date: 04/03/14
+
+CC = g++
+CFLAGS = -g -pg -Wall
+
+lab9: main.o database.o
+	$(CC) $(CFLAGS) -o lab9 main.o database.o
+main.o: main.cpp database.h
+	$(CC) $(CFLAGS) -c main.cpp
+database.o: database.h database.cpp
+	$(CC) $(CFLAGS) -c database.cpp
+clean:
+	\rm -f *.o lab9
+
+
+
+
+
+
